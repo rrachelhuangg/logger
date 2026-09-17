@@ -9,12 +9,6 @@ bp = Blueprint("main", __name__)
 def index():
     return render_template("index.html", today=date.today())
 
-
-@bp.route("/about")
-def about():
-    return render_template("about.html")
-
-
 @bp.route("/api/health")
 def health():
     return jsonify(status="ok", date=date.today().isoformat())

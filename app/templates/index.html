@@ -2,9 +2,69 @@
 
 {% block content %}
   <h1>{{ config.SITE_NAME }}</h1>
-  <p class="meta">{{ today.strftime("%B %d, %Y") }}</p>
-  <p>
-    This is the starting point. Replace this content with whatever the site is
-    actually for — entries, logs, notes, projects.
-  </p>
+
+  <section class="legend">
+    <h2>key</h2>
+    <p class="entry">
+      <span class="square square--indigo">book</span>
+      <span class="entry-text">Current book.</span>
+    </p>
+    <p class="entry">
+      <span class="square square--forest">runs</span>
+      <span class="entry-text">Running stats.</span>
+    </p>
+    <p class="entry">
+      <span class="square square--clay">work</span>
+      <span class="entry-text">SWE updates.</span>
+    </p>
+    <p class="entry">
+      <span class="square square--pink">builds</span>
+      <span class="entry-text">Side projects.</span>
+    </p>
+    <p class="entry">
+      <span class="square square--black">social</span>
+      <span class="entry-text">People, travel, drinks.</span>
+    </p>
+  </section>
+
+  <section class="entries">
+    <h2>entries</h2>
+
+    {# ---- Copy one <article class="day"> block per entry, newest first.
+           Change the date, then fill in or delete category rows. ---- #}
+    <article class="day">
+      <p class="meta">September 16, 2026</p>
+      <p class="entry">
+        <span class="square square--indigo">book</span>
+        <span class="entry-text">
+          Taipei Story - RF Kuang
+        </span>
+      </p>
+      <p class="entry">
+        <span class="square square--forest">runs</span>
+        <span class="entry-text">
+          5K PR this week to 33:XX minutes. Cut by 2 minutes.
+        </span>
+      </p>
+      <p class="entry">
+        <span class="square square--clay">work</span>
+        <span class="entry-text">
+          Got a new product release cut with optimized/refactored ingestion and processing elements of added/new data source handling to existing platform.
+          Optimized to N webhooks -> N independent worker jobs :)
+        </span>
+      </p>
+      <p class="entry">
+        <span class="square square--pink">builds</span>
+        <span class="entry-text">
+          This logger, got supplies for a RC car from scratch.
+        </span>
+      </p>
+      <p class="entry">
+        <span class="square square--black">social</span>
+        <span class="entry-text">
+          Work social lunch at the end of the week, pumpkin spice latte.
+        </span>
+      </p>
+    </article>
+  </section>
 {% endblock %}

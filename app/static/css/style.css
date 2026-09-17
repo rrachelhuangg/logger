@@ -4,6 +4,13 @@
   --muted: #7a776f;
   --accent: #3b5bdb;
   --rule: #e6e2d8;
+  --square-size: 7.5rem;
+  /* Square fills stay fixed across color schemes so white text keeps its contrast. */
+  --square-indigo: #3b4fa8;
+  --square-clay: #a8442a;
+  --square-forest: #2e6f40;
+  --square-pink: #79305a;
+  --square-black: black;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -69,6 +76,89 @@ h1 {
   margin: 0 0 0.25rem;
   font-size: 1.9rem;
   line-height: 1.2;
+}
+
+.square {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--square-size);
+  aspect-ratio: 1 / 1;
+  padding: 0.5rem;
+  background: var(--square-indigo);
+  color: #fff;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.entry {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.entry-text {
+  flex: 1;
+}
+
+.square--indigo {
+  background: var(--square-indigo);
+}
+
+.square--clay {
+  background: var(--square-clay);
+}
+
+.square--forest {
+  background: var(--square-forest);
+}
+
+.square--pink {
+  background: var(--square-pink);
+}
+
+.square--black {
+  background: var(--square-black);
+}
+
+/* The key reuses .entry markup at a smaller scale — overriding the variable
+   resizes only the swatches inside it. */
+.legend {
+  --square-size: 3rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.legend .square {
+  font-size: 0.75rem;
+  padding: 0.25rem;
+}
+
+.legend .entry {
+  margin: 0.75rem 0;
+}
+
+h2 {
+  margin: 0 0 1rem;
+}
+
+.day + .day {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+}
+
+/* The key's descriptions share the section-heading treatment, so both are
+   defined once here to keep them from drifting apart. */
+h2,
+.legend .entry-text {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .meta {
